@@ -1,0 +1,31 @@
+services:
+  proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    networks:
+      - TESTNETWORK
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - proxy-manager-data:/data
+      - letsencrypt:/etc/letsencrypt
+  web:
+    image: 'nginx:latest'
+    restart: unless-stopped
+    networks:
+      - TESTNETWORK
+    ports:
+      - '8080:80'
+    volumes:
+      - nginx-vol:/usr/share/nginx/html:ro
+
+networks:
+  TESTNETWORK:
+    external: true
+
+volumes:
+  nginx-vol:
+  proxy-manager-data:
+  letsencrypt:
