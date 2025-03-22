@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    restart: always
+    networks:
+      - ddnsnetwork
+    environment:
+      - API_KEY=ADD-API-KEY-HERE
+      - ZONE=ADD-DOMAIN-HERE
+      - PROXIED=true
+
+networks:
+  ddnsnetwork:
+    driver: bridge
