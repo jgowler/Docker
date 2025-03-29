@@ -10,8 +10,8 @@ services:
             - grafana-data:/var/lib/grafana
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=your_password
-        networks:
-          - monitoring
+        #networks:
+        #  - monitoring
         depends_on:
           - prometheus
 
@@ -24,10 +24,10 @@ services:
             - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml
         ports:
             - '9090:9090/tcp'
-        commands:
+        command:
           - "--config.file=/etc/prometheus/prometheus.yaml"
-        networks:
-          - monitoring
+        #networks:
+        #  - monitoring
 volumes:
     grafana-data:
     prometheus-data:

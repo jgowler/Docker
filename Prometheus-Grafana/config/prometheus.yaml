@@ -7,4 +7,4 @@ scrape_configs:
       - targets: ['localhost:9090']
   - job_name: 'Mealie' # add the app to monitor
     static_configs:
-      - targets: ['mealie:9925'] # add the app ip:port
+      - targets: ['localhost:9925'] # add the app ip:port
