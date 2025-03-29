@@ -1,0 +1,46 @@
+services:
+  proxy:
+    container_name: 'NginxProxyManager'
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    networks:
+      - proxy-network
+    ports:
+      - '80:80' # public http
+      - '81:81' # admin
+      - '443:443' # public https
+    environment:
+      # simple passwords created for testing purposes only.
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "npm"
+      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_NAME: "npm"
+    volumes:
+      - ./npm-data:/data # not stored in a docker volume
+      - letsencrypt-data:/etc/letsencrypt # stored in docker volume
+    depends_on:
+      - db
+  db:
+    container_name: 'MariaDB'
+    image: jc21/mariadb-aria:latest
+    restart: always
+    networks:
+      - proxy-network
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+      MARIADB_AUTO_UPGRADE: '1'
+
+networks:
+  proxy-network:
+    driver: bridge
+
+volumes:
+  npm-data:
+  letsencrypt-data:
+  mariadb-data:

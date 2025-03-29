@@ -1,0 +1,13 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    ports:
+    #- '8000:8000/tcp' # Only required for use with Edge compute features
+    - '9443:9443/tcp'
+    volumes:
+    - Portainer-data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+volumes:
+  Portainer-data:
+
