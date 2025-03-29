@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'Mealie' # add the app to monitor
+    static_configs:
+      - targets: ['mealie:9925'] # add the app ip:port
