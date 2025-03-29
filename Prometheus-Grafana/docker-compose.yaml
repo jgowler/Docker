@@ -24,6 +24,8 @@ services:
             - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml
         ports:
             - '9090:9090/tcp'
+        commands:
+          - "--config.file=/etc/prometheus/prometheus.yaml"
         networks:
           - monitoring
 volumes:
