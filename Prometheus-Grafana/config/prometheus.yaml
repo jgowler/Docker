@@ -5,6 +5,8 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
-  - job_name: 'Mealie' # add the app to monitor
+# add apps here
+  - job_name: 'appname' # add the app to monitor
     static_configs:
-      - targets: ['localhost:9925'] # add the app ip:port
+      - targets: ['address:port']
+    fallback_scrape_protocol: 'PrometheusText0.0.4' # fallback in case metrics != HTML

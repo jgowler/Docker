@@ -1,0 +1,7 @@
+# To add apps in to Prometheus for monitoring first
+# add the details of the job to the /config/prometheus.yaml
+# file. Once the app(s) have been added here they should appear
+# as targets in the dashboard.
+
+# To add Prometheus as a data source in Grafana log in with admin/<password>
+# (if password is not specified in the compose file, log in will be admin/admin).
