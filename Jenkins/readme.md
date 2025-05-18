@@ -1,28 +1,30 @@
-# 🧰 Jenkins Docker Setup
+# Jenkins Docker Setup
 
-A **simple Docker Compose configuration** to deploy **Jenkins**, the popular open-source **automation server**. This setup includes the **Jenkins setup wizard**, enabling quick first-time configuration.
+This repository provides a **Docker Compose configuration** for deploying **Jenkins**, the widely used open-source **automation server**.  
+The setup includes the **Jenkins setup wizard**, enabling quick first-time configuration.
 
-## 🚀 What is Jenkins & Why Use It?  
-Jenkins is a powerful automation tool widely used for **continuous integration (CI) and continuous delivery (CD)**. It streamlines software development by automating tasks such as **building, testing, and deployment**.  
+## What is Jenkins & Why Use It?
 
-### 🛠 Benefits of Jenkins:
-- **Automates repetitive tasks** like compiling code and running tests.
-- **Extends functionality** with hundreds of plugins.
-- **Orchestrates complex workflows** for seamless pipeline automation.
-- **Supports distributed builds** across multiple machines (agents).
-- **Improves efficiency & reliability** in software development.
+Jenkins is a powerful automation tool designed for **continuous integration (CI) and continuous delivery (CD)**. It streamlines software development by automating essential tasks such as **building, testing, and deployment**.
 
-## 🔧 Container Details
-This setup runs the **official Jenkins Docker image** with:
-- **Root privileges** for full environment access.
-- **Persistent storage** for Jenkins data, jobs, and configurations.
-- **Exposed ports** for seamless access:
-  - `8080`: Web UI for managing Jenkins.
-  - `50000`: Port for Jenkins agent connections.
+### Benefits of Jenkins
+- **Automates repetitive tasks**, including code compilation and testing
+- **Extends functionality** with a vast selection of plugins
+- **Orchestrates complex workflows** for seamless pipeline automation
+- **Supports distributed builds** across multiple machines (agents)
+- **Enhances efficiency and reliability** in software development
 
-The **setup wizard** runs automatically on first launch, guiding you through **initial user creation, plugin installation, and basic configuration**.
+## Container Details
+This setup utilizes the **official Jenkins Docker image**, providing:
+- **Root privileges** for full environment access
+- **Persistent storage** to retain Jenkins data, jobs, and configurations
+- **Exposed ports** for seamless connectivity:
+  - `8080`: Web UI for managing Jenkins
+  - `50000`: Port for Jenkins agent connections
 
-## ⚙️ Usage  
-To deploy Jenkins using Docker Compose:  
+The **setup wizard** runs automatically on first launch, guiding users through **initial user creation, plugin installation, and basic configuration**.
+
+## Usage
+To deploy Jenkins using Docker Compose, execute:
 ```sh
 docker-compose up -d

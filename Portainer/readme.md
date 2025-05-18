@@ -1,31 +1,30 @@
-# 📦 Portainer Docker Setup  
+# Portainer Docker Setup
 
-A **Docker Compose configuration** to deploy **Portainer**, a lightweight **container management tool** with a web-based interface for managing Docker environments.
+This repository provides a **Docker Compose configuration** for deploying **Portainer**, a lightweight **container management tool** featuring a web-based interface for managing Docker environments.
 
-## 🚀 Features  
-- **Intuitive web UI** for managing containers, images, networks, and volumes  
-- **Secure access** via HTTPS (`9443` port)  
-- **Direct integration with Docker** using the `/var/run/docker.sock` socket  
-- **Persistent storage** to retain configurations and settings across restarts  
-- **Supports Edge Compute features** *(optional)*  
+## Features
+- **Intuitive web interface** for overseeing containers, images, networks, and volumes
+- **Secure access** via HTTPS (`9443` port) for remote management
+- **Seamless integration** with Docker using the `/var/run/docker.sock` socket
+- **Persistent storage** ensuring configurations and settings are retained across restarts
+- **Optional Edge Compute support** for managing remote environments
 
-## 🔧 Container Details  
-- **Runs the official Portainer image** (`portainer/portainer-ce:lts`)  
-- **Exposes Port**:
-  - `9443`: Secure HTTPS access for the Portainer web UI  
-  - *(Optional)* `8000`: Needed for Edge Compute features  
-- **Persistent storage**:
-  - Configuration saved in the **`Portainer-data` volume**  
-- **Direct Docker management**:
-  - Connects to the **Docker daemon** via `/var/run/docker.sock`  
-- **Auto-restart enabled** unless manually stopped  
+## Container Details
+- **Uses the official Portainer image** (`portainer/portainer-ce:lts`)
+- **Exposes essential ports** for accessibility:
+  - `9443`: Secure HTTPS access for the Portainer web interface
+  - *(Optional)* `8000`: Required for Edge Compute features
+- **Ensures persistent storage**:
+  - Configuration stored in the **`Portainer-data` volume**
+- **Directly connects to the Docker daemon** via `/var/run/docker.sock`
+- **Automatic restart** enabled unless manually stopped
 
-## ⚙️ Deployment Guide  
+## Deployment Guide
 
-1️⃣ **Prepare the Environment**  
-- Place the `docker-compose.yml` file in a directory on your Docker host  
+### 1. Prepare the Environment
+- Place the `docker-compose.yml` file in a directory on your Docker host.
 
-2️⃣ **Deploy the Container**  
-Run the following command:  
+### 2. Deploy the Container
+Execute the following command:
 ```sh
 docker-compose up -d

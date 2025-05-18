@@ -1,23 +1,23 @@
-# 🌍 Cloudflare Dynamic DNS (DDNS) Docker Setup  
+# Cloudflare Dynamic DNS (DDNS) Docker Setup
 
-A **Docker Compose configuration** to automatically update **Cloudflare DNS records** when your **public IP address changes**.  
-This ensures seamless domain access, especially for dynamic IP environments.
+This repository provides a **Docker Compose configuration** for automatically updating **Cloudflare DNS records** whenever the public IP address changes.  
+It ensures continuous domain accessibility, particularly in dynamic IP environments.
 
-## 🚀 Features  
-- **Automatically updates DNS records** when the public IP changes  
-- **Uses Cloudflare's API** for instant updates  
-- **Supports proxying** through Cloudflare for enhanced security  
-- **Persistent network configuration** using Docker  
+## Features
+- **Automated DNS record updates** triggered by public IP changes
+- **Integration with Cloudflare’s API** for real-time updates
+- **Optional Cloudflare proxying** to enhance security and performance
+- **Persistent network configuration** using Docker
 
-## 🔧 Setup Guide  
+## Setup Guide
 
-### 1️⃣ Configure Environment Variables  
-Edit the `docker-compose.yml` file to include:  
-- **API_KEY:** Your **Cloudflare API key**  
-- **ZONE:** The domain name linked to Cloudflare  
-- **PROXIED:** Set to `true` to use Cloudflare's proxy  
+### 1. Configure Environment Variables
+Modify the `docker-compose.yml` file to include:
+- **API_KEY**: Your **Cloudflare API key**
+- **ZONE**: The domain name registered with Cloudflare
+- **PROXIED**: Set to `true` to enable Cloudflare’s proxying functionality
 
-### 2️⃣ Deploy the Container  
-Run the following command:  
+### 2. Deploy the Container
+Run the following command:
 ```sh
 docker-compose up -d

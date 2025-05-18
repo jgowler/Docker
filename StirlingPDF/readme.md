@@ -1,23 +1,22 @@
-# 📄 Stirling PDF Docker Setup  
+# Stirling PDF Docker Setup  
 
-A **Docker Compose configuration** for deploying **Stirling PDF**, a versatile web-based **PDF processing tool**.  
-This setup allows for **document conversion, editing**, and **custom configurations**.
+This repository provides a **Docker Compose configuration** for deploying **Stirling PDF**, a web-based **PDF processing tool** designed for document conversion, editing, and customization.
 
-## 🚀 Features  
-- **Process PDFs directly in the browser**  
-- **Supports OCR (Optical Character Recognition)** via Tesseract training data  
-- **Persistent storage** for configurations, logs, and custom files  
-- **Customizable environment settings** for security and functionality  
+## Features  
+- **Web-based PDF processing** for seamless document management  
+- **Integrated OCR (Optical Character Recognition)** using Tesseract training data  
+- **Persistent storage** to retain configurations, logs, and custom files  
+- **Customizable environment settings** for enhanced security and functionality  
 
-## 🔧 Container Details  
-- **Runs the official Stirling PDF image** (`stirlingtools/stirling-pdf:latest`)  
+## Container Details  
+- **Uses the official Stirling PDF image** (`stirlingtools/stirling-pdf:latest`)  
 - **Exposes port `8080`** for web-based document processing  
-- **Persistent storage locations**:
-  - Training data (`/usr/share/tessdata/`)  
-  - Extra configs (`/configs/`)  
-  - Custom files (`/customFiles/`)  
-  - Logs (`/logs/`)  
+- **Ensures persistent storage** with the following directories:
+  - Training data: `/usr/share/tessdata/`  
+  - Extra configurations: `/configs/`  
+  - Custom files: `/customFiles/`  
+  - Logs: `/logs/`  
 - **Environment variables for customization**:
-  - `DOCKER_ENABLE_SECURITY`: Disable/enable security settings  
+  - `DOCKER_ENABLE_SECURITY`: Enable or disable security settings  
   - `INSTALL_BOOK_AND_ADVANCED_HTML_OPS`: Control additional processing features  
-  - `LANGS`: Set default language
+  - `LANGS`: Define the default language  

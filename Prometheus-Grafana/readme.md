@@ -1,32 +1,32 @@
-# 📊 Prometheus & Grafana Docker Setup  
+# Prometheus & Grafana Docker Setup  
 
 🚧 **Work in Progress** – Not yet ready for deployment 🚧  
 
-A **Docker Compose configuration** to deploy **Prometheus** for collecting metrics and **Grafana** for visualizing them.  
-This setup provides persistent storage and basic security configurations for monitoring environments.
+This repository provides a **Docker Compose configuration** for deploying **Prometheus** to collect metrics and **Grafana** to visualize them.  
+The setup ensures **persistent storage**, basic security configurations, and a seamless monitoring environment.
 
-## 🚀 Features  
+## Features  
 
-### 📈 Grafana  
-- **Powerful visualization tool** for monitoring data  
-- **Accessible via port `3000`** for dashboards and analytics  
-- **Persistent storage** for settings in `grafana-data` volume  
-- **Admin security settings configurable** via environment variables  
+### Grafana  
+- **Advanced visualization tool** for monitoring and analytics  
+- **Accessible via port `3000`** for dashboards and reporting  
+- **Persistent storage** maintained in the `grafana-data` volume  
+- **Configurable admin security settings** via environment variables  
 
-### 🔍 Prometheus  
-- **Collects system and application metrics**  
-- **Configurable via `prometheus.yaml`**  
+### Prometheus  
+- **Collects and stores system and application metrics**  
+- **Customizable configuration** via `prometheus.yaml`  
 - **Exposes port `9090`** for metric queries and monitoring  
-- **Persistent data storage** in `prometheus-data` volume  
-- **Auto-restarts to ensure availability**  
+- **Ensures persistent data storage** using the `prometheus-data` volume  
+- **Auto-restarts** for high availability  
 
-## ⚙️ Deployment Guide  
+## Deployment Guide  
 
-1️⃣ **Modify Environment Variables** *(optional)*  
+### 1. Modify Environment Variables *(optional)*  
 - Set `GF_SECURITY_ADMIN_PASSWORD` for Grafana admin access  
-- Ensure `prometheus.yaml` is configured properly  
+- Ensure `prometheus.yaml` is properly configured  
 
-2️⃣ **Deploy the Containers**  
-Run the following command:  
+### 2. Deploy the Containers  
+Execute the following command:  
 ```sh
 docker-compose up -d
